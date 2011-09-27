@@ -21,6 +21,7 @@
     handle_fetch_request = function(event) {
       var input;
       $('#manifest-output').empty();
+      $('.error-container').empty();
       $('.output-container').fadeIn('slow');
       $('.spinner').fadeIn('slow');
       input = $('#site-input').val();

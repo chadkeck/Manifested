@@ -38,6 +38,7 @@ $ ->
 
     handle_fetch_request = (event) ->
         $( '#manifest-output' ).empty()
+        $( '.error-container' ).empty()
         $( '.output-container' ).fadeIn( 'slow' )
         $( '.spinner' ).fadeIn( 'slow' )
 
