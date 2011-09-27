@@ -1,6 +1,7 @@
 $ ->
     assemble = ( data ) ->
-        console.log( data )
+        if not data.site
+            show_error( "Couldn't connect to the site." )
 
         images_str = data.images.join( '\n' )
         javascripts_str = data.javascripts.join( '\n' )
@@ -8,7 +9,7 @@ $ ->
 
         output = """
         CACHE MANIFEST
-        # rev 1
+        # rev 0
         
         NETWORK:
         # resources you never want cached go here
@@ -38,7 +39,7 @@ $ ->
 
     handle_fetch_request = (event) ->
         $( '#manifest-output' ).empty()
-        $( '.error-container' ).empty()
+        $( '.error-container' ).empty().hide()
         $( '.output-container' ).fadeIn( 'slow' )
         $( '.spinner' ).fadeIn( 'slow' )
 
@@ -95,6 +96,7 @@ $ ->
 
     $( '.output-container' ).hide()
     $( '#manifest-output' ).hide()
+    $( '#error-container' ).hide()
     
     bind_enter_key()
     $( '#site-input' ).focus()

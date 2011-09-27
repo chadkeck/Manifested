@@ -3,11 +3,13 @@
     var assemble, bind_enter_key, fetch_site, handle_fetch_request, is_valid_url, load_copy_button, show_error;
     assemble = function(data) {
       var images_str, javascripts_str, output, stylesheets_str;
-      console.log(data);
+      if (!data.site) {
+        show_error("Couldn't connect to the site.");
+      }
       images_str = data.images.join('\n');
       javascripts_str = data.javascripts.join('\n');
       stylesheets_str = data.stylesheets.join('\n');
-      output = "CACHE MANIFEST\n# rev 1\n\nNETWORK:\n# resources you never want cached go here\n\nCACHE:\n# images\n" + images_str + "\n\n# JavaScripts\n" + javascripts_str + "\n\n# stylesheets\n" + stylesheets_str;
+      output = "CACHE MANIFEST\n# rev 0\n\nNETWORK:\n# resources you never want cached go here\n\nCACHE:\n# images\n" + images_str + "\n\n# JavaScripts\n" + javascripts_str + "\n\n# stylesheets\n" + stylesheets_str;
       $('.error-container').hide();
       $('#manifest-output').html(output);
       $('#manifest-output').slideDown();
@@ -21,7 +23,7 @@
     handle_fetch_request = function(event) {
       var input;
       $('#manifest-output').empty();
-      $('.error-container').empty();
+      $('.error-container').empty().hide();
       $('.output-container').fadeIn('slow');
       $('.spinner').fadeIn('slow');
       input = $('#site-input').val();
@@ -79,6 +81,7 @@
     $('#fetch-button').click(handle_fetch_request);
     $('.output-container').hide();
     $('#manifest-output').hide();
+    $('#error-container').hide();
     bind_enter_key();
     return $('#site-input').focus();
   });
