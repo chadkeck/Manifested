@@ -7,7 +7,8 @@
       images_str = data.images.join('\n');
       javascripts_str = data.javascripts.join('\n');
       stylesheets_str = data.stylesheets.join('\n');
-      output = "CACHE MANIFEST\n# rev 1\n\nNETWORK:\n# resources you never want cached go here\n\nCACHE:\n# images\n" + images_str + "\n\n# javascripts\n" + javascripts_str + "\n\n# stylesheets\n" + stylesheets_str;
+      output = "CACHE MANIFEST\n# rev 1\n\nNETWORK:\n# resources you never want cached go here\n\nCACHE:\n# images\n" + images_str + "\n\n# JavaScripts\n" + javascripts_str + "\n\n# stylesheets\n" + stylesheets_str;
+      $('.error-container').hide();
       $('#manifest-output').html(output);
       $('#manifest-output').slideDown();
     };

@@ -17,7 +17,7 @@ $ ->
         # images
         #{images_str}
         
-        # javascripts
+        # JavaScripts
         #{javascripts_str}
         
         # stylesheets
@@ -26,6 +26,7 @@ $ ->
 
         #console.log( 'output', output )
 
+        $( '.error-container' ).hide()
         $( '#manifest-output' ).html( output )
         $( '#manifest-output' ).slideDown()
         return
