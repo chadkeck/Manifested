@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="/stylesheets/960_12_col.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/stylesheets/manifested.css" media="screen" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+        <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript" src="javascripts/jquery-1.6.4.js"></script>
+		<script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
+		<script type="text/javascript" src="javascripts/manifested.js"></script>
+    </head>
+    <body>
+        <div class="container_12">
+            <div class="grid_12" id="title"> Manifested </div>
+            <div class="grid_12" id="description"> Get a jump start on converting your site to running offline using <a href="http://diveintohtml5.org/offline.html">HTML5</a>. </div>
+            <div class="grid_12" id="input-container">
+                <span id="protocol">http://</span>
+                <input type="text" id="site-input" spellcheck="false"/>
+                <button id="fetch-button" >Generate Manifest</button>
+            </div>
+
+            <!--
+            <div id="d_clip_container" class="grid_12">
+                <div id="d_clip_button">Copy To Clipboard</div>
+            </div>
+            -->
+
+            <div class="grid_12 output-container">
+                <div class="spinner"></div>
+                <pre id="manifest-output">
+                </pre>
+            </div>
+        </div>
+    </body>
+</html>

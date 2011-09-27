@@ -1,0 +1,119 @@
+pre {
+    font-family: Monaco, Courier, MonoSpace;
+    line-height: 1.8;
+    font-size: 12px;
+    overflow: auto;
+}
+
+.output-container {
+    position: relative;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 12px #333;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    background-image: url( ../resources/spinner.gif );
+    background-repeat: no-repeat;
+}
+
+#d_clip_button {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#protocol {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+}
+
+#title {
+    font-family: "Holtwood One SC", serif;
+    text-align: center;
+    color: #f26895;
+    font-size: 64px;
+    text-shadow: 0px 3px 4px black;
+    padding-bottom: 8px;
+}
+
+#description {
+    text-align: center;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    padding-bottom: 12px;
+}
+
+#input-container {
+    text-align: center;
+}
+
+#site-input {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    width: 40%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    background: #FBFBFB;
+    outline: none;
+    -moz-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+    -webkit-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+    box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+    line-height: 1;
+}
+
+#fetch-button {
+    background-color: #f26895;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f26895 0), to(#f26895 50%));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #f26895 0, #f26895 50%, #f15587 50%, #f15587 100%);
+    background-image: -moz-linear-gradient(top, #f26895 0, #f26895 50%, #f15587 50%, #f15587 100%);
+    background-image: -ms-linear-gradient(top, #f26895 0, #f26895 50%, #f15587 50%, #f15587 100%);
+    background-image: -o-linear-gradient(top, #f26895 0, #f26895 50%, #f15587 50%, #f15587 100%);
+    background-image: linear-gradient(top, #f26895 0, #f26895 50%, #f15587 50%, #f15587 100%);
+    border: 0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    color: #fcfcfc;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 1;
+    height: 36px;
+    text-align: center;
+    text-shadow: 0px -1px 1px #a64767;
+    width: 250px;
+}
+#fetch-button:hover {
+    background-color: #e2558b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e2558b 0), to(#e2558b 50%));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #e2558b 0, #e2558b 50%, #df3e7b 50%, #df3e7b 100%);
+    background-image: -moz-linear-gradient(top, #e2558b 0, #e2558b 50%, #df3e7b 50%, #df3e7b 100%);
+    background-image: -ms-linear-gradient(top, #e2558b 0, #e2558b 50%, #df3e7b 50%, #df3e7b 100%);
+    background-image: -o-linear-gradient(top, #e2558b 0, #e2558b 50%, #df3e7b 50%, #df3e7b 100%);
+    background-image: linear-gradient(top, #e2558b 0, #e2558b 50%, #df3e7b 50%, #df3e7b 100%);
+    cursor: pointer;
+}
+#fetch-button:active {
+    background-color: #c94477;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c94477 0), to(#c94477 50%));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
+    background-image: -moz-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
+    background-image: -ms-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
+    background-image: -o-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
+    background-image: linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
+}
