@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var assemble, bind_enter_key, fetch_site, handle_fetch_request, is_valid_url, load_copy_button;
+    var assemble, bind_enter_key, fetch_site, handle_fetch_request, is_valid_url, load_copy_button, show_error;
     assemble = function(data) {
       var images_str, javascripts_str, output, stylesheets_str;
       console.log(data);
@@ -30,18 +30,19 @@
         fetch_site(input);
       } else {
         console.log('bad input', input);
+        show_error("Sorry, I don't understand what '" + input + "' is. Please input a valid domain name.");
       }
     };
     fetch_site = function(url) {
       return $.ajax({
         url: '/cgi-bin/fetch.py',
-        dataType: 'json',
         data: {
           site: url
         },
         success: assemble,
         error: function(jqXHR, textStatus, errorThrown) {
-          return console.log(jqXHR, textStatus);
+          console.log(jqXHR, textStatus);
+          return show_error("Ouch. Something is really wrong. Try again later.");
         },
         complete: function(jqXHR, textStatus) {
           return $('.spinner').hide();
@@ -56,6 +57,15 @@
         }
         return true;
       });
+    };
+    show_error = function(error) {
+      var error_container;
+      console.log('got an error', error);
+      $('.output-container').fadeIn('slow');
+      $('.spinner').hide();
+      error_container = $('.error-container');
+      error_container.show();
+      return error_container.html(error);
     };
     load_copy_button = function() {
       var clip;

@@ -1,8 +1,7 @@
-#!/opt/local/bin/python2.6
+#!/usr/bin/env python2.6
 
 import urllib2
 from BeautifulSoup import BeautifulSoup
-from pprint import pprint
 
 import cgitb
 cgitb.enable()
@@ -12,7 +11,6 @@ import cgi
 def send_json( data ):
     print "Content-type: application/json; charset=utf-8\r\n"
     print json.dumps( data )
-
 
 def get_attributes( items, attribute ):
     attributes = []
@@ -36,24 +34,19 @@ def get_images( soup ):
     images = soup.findAll( 'img' )
     return get_attributes( images, 'src' )
 
-#f = open( 'browserhash.html', 'r' )
-#soup = BeautifulSoup( f.read() )
-
-#pprint( javascripts )
-
-#pprint( stylesheets )
-
-#pprint( images )
-
 cgi_data = cgi.FieldStorage( keep_blank_values = True )
-#send_json( { 'site': cgi_data['site'].value } )
-site = cgi_data['site'].value
-page = urllib2.urlopen( site )
+url = ""
+if not cgi_data:
+    url = "http://reddit.com"
+else:
+    url = cgi_data['site'].value
+
+page = urllib2.urlopen( url )
 soup = BeautifulSoup( page )
 
 d = {}
 d['javascripts'] = get_javascripts( soup )
 d['stylesheets'] = get_stylesheets( soup )
 d['images'] = get_images( soup )
-d['site'] = site
+d['site'] = url
 send_json( d )

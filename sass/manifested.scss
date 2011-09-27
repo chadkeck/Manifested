@@ -10,7 +10,7 @@ pre {
     background: #333;
     color: white;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0px 5px 12px #333;
 }
 
@@ -54,11 +54,21 @@ pre {
     text-align: center;
 }
 
+.error-container {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: #f26895;
+    color: black;
+    padding: 8px;
+}
+
 #site-input {
     font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
     font-weight: 200;
     font-size: 24px;
-    width: 40%;
+    width: 35%;
     padding: 3px;
     margin-top: 2px;
     margin-right: 6px;

@@ -48,18 +48,19 @@ $ ->
             fetch_site( input )
         else
             console.log( 'bad input', input )
+            show_error( "Sorry, I don't understand what '#{input}' is. Please input a valid domain name." )
         return
 
     fetch_site = (url) ->
         $.ajax {
             url: '/cgi-bin/fetch.py'
-            dataType: 'json'
             data: {
                 site: url
             }
             success: assemble
             error: (jqXHR, textStatus, errorThrown) ->
                 console.log( jqXHR, textStatus )
+                show_error( "Ouch. Something is really wrong. Try again later." )
             complete: (jqXHR, textStatus) ->
                 $( '.spinner' ).hide()
         }
@@ -72,6 +73,15 @@ $ ->
                     return false
                 return true
         )
+
+    show_error = (error) ->
+        console.log( 'got an error', error )
+        $( '.output-container' ).fadeIn( 'slow' )
+        $( '.spinner' ).hide()
+
+        error_container = $( '.error-container' )
+        error_container.show()
+        error_container.html( error )
 
     load_copy_button = ->
         clip = new ZeroClipboard.Client()
