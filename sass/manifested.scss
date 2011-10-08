@@ -127,3 +127,31 @@ pre {
     background-image: -o-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
     background-image: linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
 }
+
+#footer-container {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: #f26895;
+    box-shadow: 0px -3px 12px #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    ul {
+        text-align: center;
+    }
+
+    li {
+        padding: 3px 3px 3px 3px;
+        display: inline;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
