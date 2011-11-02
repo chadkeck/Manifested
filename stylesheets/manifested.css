@@ -118,7 +118,7 @@ pre {
   background-image: linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%); }
 
 #footer-container {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   left: 0px;
