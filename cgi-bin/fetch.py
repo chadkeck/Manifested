@@ -1,4 +1,4 @@
-#!/home/dregsoft/opt/bin/python2.6
+#!/opt/local/bin/python2.6
 
 import urllib2
 from BeautifulSoup import BeautifulSoup
